@@ -1,0 +1,6 @@
+
+### Limitando pelo  
+GET http://localhost:8080 HTTP/1.1
+Host: localhost:8080
+API_KEY: "token_test1"
+

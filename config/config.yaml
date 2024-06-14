@@ -1,0 +1,23 @@
+
+cache:
+  host: "localhost"
+  port: 6379
+  db: 1
+  password: ""
+
+server:
+  port: 8080
+
+limiter:
+  limitrequestperip: 5
+  expiration: 5
+  blockingtimeip: 300
+  blockingtimetoken: 300
+
+tokens:
+  - token: "token_test1"
+    limiter: 2
+    expiration: 5
+  - token: "token_test2"
+    limiter: 1
+    expiration : 5
