@@ -2,9 +2,6 @@
 
 O Rate Limiter e uma solução que visa limitar o número de requesições que podem ser realizadas por um determido Ip ou Token.
 
-## 🚀 Começando
-
-Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
 
 ### 📋 Pré-requisitos
 
