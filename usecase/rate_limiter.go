@@ -104,7 +104,6 @@ func (rl *RateLimiter) Count(ctx context.Context, key string) (int, bool) {
 }
 
 func configToken(token string) RateLimitToken {
-
 	for _, v := range config.Token() {
 		if token == v.Token {
 			return RateLimitToken{

@@ -5,7 +5,6 @@ import (
 	"net"
 	"net/http"
 	"rate-limiter/usecase"
-	"strings"
 
 	"github.com/labstack/echo/v4"
 )
@@ -42,14 +41,12 @@ func (rl *RateLimiter) RaceLimiterMiddleware(next echo.HandlerFunc) echo.Handler
 
 func getIP(r *http.Request) string {
 
-	if forwarded := r.Header.Get("X-Forwarded-For"); forwarded != "" {
-		return strings.Split(forwarded, ",")[0]
-	} else {
-		host, _, err := net.SplitHostPort(r.RemoteAddr)
-
-		if err != nil {
-			return ""
-		}
-		return host
+	ip := r.Header.Get("X-Real-Ip")
+	if ip == "" {
+		ip = r.Header.Get("X-Forwarded-For")
 	}
+	if ip == "" {
+		ip, _, _ = net.SplitHostPort(r.RemoteAddr)
+	}
+	return ip
 }

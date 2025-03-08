@@ -1,7 +1,7 @@
 # Etapa de construção
 FROM golang:1.22.2-alpine
 
-WORKDIR /limiter
+WORKDIR /app
 
 # Copie os arquivos go.mod e go.sum
 COPY go.mod ./
@@ -17,5 +17,6 @@ COPY . .
 # Construa o executável
 RUN go build -o main ./cmd
 
+EXPOSE 8080
 # Comando para executar o binário
 CMD ["./main"]
