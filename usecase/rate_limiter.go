@@ -29,12 +29,12 @@ func (rl *RateLimiter) AllowRequest(ctx context.Context, key string, isToken boo
 
 	if isToken {
 
-		key = fmt.Sprintf("block:%s", key)
-
 		tokenLimiter := configToken(key)
+
 		if (RateLimitToken{} == tokenLimiter) {
 			return false
 		}
+
 		if rl.IsBlocked(ctx, key) {
 			return false
 		}

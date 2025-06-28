@@ -16,8 +16,8 @@ limiter:
 
 tokens:
   - token: "token_test1"
-    limiter: 2
+    limiter: 5
     expiration: 5
   - token: "token_test2"
-    limiter: 1
+    limiter: 10
     expiration : 5

@@ -27,5 +27,6 @@ func main() {
 	}
 
 	log.Println(" [*] Start service")
+
 	server.Execute()
 }
